@@ -42,8 +42,10 @@ sh /usr/local/sbin/thp-disable.sh || /bin/true
 echo -e '\nsh /usr/local/sbin/thp-disable.sh || /bin/true' >> /etc/rc.local
 
 ## disable iptables
-chkconfig iptables off
-service iptables stop
+yum -y install iptables-services net-tools perl bind-utils
+iptables --flush INPUT
+iptables --flush FORWARD
+service iptables save
 
 ## swappiness to 0
 sysctl -w vm.swappiness=0

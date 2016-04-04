@@ -32,7 +32,7 @@ import_env hadoop2_env.sh
 # Default to 4 workers plus master for good spreading of master daemons.
 NUM_WORKERS=4
 # Use CentOS instead of Debian.
-GCE_IMAGE='centos-6'
+GCE_IMAGE='centos-7'
 
 # Create attached storage
 USE_ATTACHED_PDS=true
@@ -55,7 +55,7 @@ import_env platforms/hdp/ambari.conf
 
 ## Version of Ambari and location of YUM package repository
 AMBARI_VERSION="${AMBARI_VERSION:-2.2.1.0}"
-AMBARI_REPO=${AMBARI_REPO:-http://public-repo-1.hortonworks.com/ambari/centos6/${AMBARI_VERSION:0:1}.x/updates/${AMBARI_VERSION}/ambari.repo}
+AMBARI_REPO=${AMBARI_REPO:-http://public-repo-1.hortonworks.com/ambari/centos7/${AMBARI_VERSION:0:1}.x/updates/${AMBARI_VERSION}/ambari.repo}
 
 ## If 'true', URLs for web interfaces, such as the jobtracker will below
 ## linked from Ambari with the public IP.
